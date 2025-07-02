@@ -1,0 +1,13 @@
+snapshots:
+  - name: dim_products
+    relation: ref('core_products')
+    config:
+      schema: core
+      database: SNOWFLAKE_LEARNING_DB
+      unique_key: ['PRODUCTKEY', 'PRODUCTSUBCATEGORYKEY', 'PRODUCTSKU']
+      strategy: check
+      check_cols: ['PRODUCTNAME', 'PRODUCTDESCRIPTION', 'PRODUCTCOLOR', 'PRODUCTSTYLE', 'PRODUCTCOST', 'PRODUCTPRICE']
+      hard_deletes: invalidate
+      valid_from: valid_from
+      valid_to: valid_to 
+      dbc_scd_id: scd_id 

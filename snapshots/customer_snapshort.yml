@@ -1,0 +1,13 @@
+snapshots:
+  - name: dim_customers
+    relation: ref('core_customers')
+    config:
+      schema: core
+      database: SNOWFLAKE_LEARNING_DB
+      unique_key: CUSTOMERKEY
+      strategy: check
+      check_cols: ['PREFIX', 'FIRSTNAME', 'LASTNAME', 'BIRTHDATE', 'MARITALSTATUS', 'GENDER', 'EMAILADDRESS', 'ANNUALINCOME', 'TOTALCHILDREN', 'EDUCATIONLEVEL', 'OCCUPATION', 'HOMEOWNER']
+      hard_deletes: invalidate
+      valid_from: valid_from
+      valid_to: valid_to 
+      dbc_scd_id: scd_id 
